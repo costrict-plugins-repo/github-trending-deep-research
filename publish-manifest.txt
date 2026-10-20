@@ -1,0 +1,75 @@
+# Deep-research plugin publish manifest
+# Source: ~/.claude/plugins/coordinator-claude/deep-research/
+# Target: X:/deep-research-claude/
+#
+# Manifest mode: selective copy, no delete. Target has extra files
+# (README.md, LICENSE, docs/) that don't exist in source.
+
+# Staleness scan: SCAN: <subdir> directives walk that source subdir on every
+# /percolate run and warn for any file not listed in the manifest below. Without
+# them, drift goes silent (proven by the May 2026 driver-file gap — three
+# load-bearing pipeline files lived in source for ~10 days while the manifest
+# claimed coverage). Add new subdirs here as the plugin grows.
+SCAN: agents
+SCAN: commands
+SCAN: pipelines
+SCAN: skills
+SCAN: notebooklm
+
+# Config
+CLAUDE.md
+
+# Agent definitions
+agents/repo-scout.md
+agents/repo-specialist.md
+agents/research-scout.md
+agents/research-specialist.md
+agents/research-synthesizer.md
+agents/structured-synthesizer.md
+
+# Commands
+# (repo.md, structured.md, web.md collapsed into research.md --mode in v1.3.0)
+commands/research.md
+commands/setup.md
+
+# Pipelines
+pipelines/PIPELINE.md
+pipelines/spec-format.md
+pipelines/eval-rubric.md
+pipelines/gap-specialist-prompt-template.md
+pipelines/repo-atlas-prompt-template.md
+pipelines/repo-atlas-sketch-prompt-template.md
+pipelines/repo-driver.md
+pipelines/repo-research-internals.md
+pipelines/repo-scout-prompt-template.md
+pipelines/repo-specialist-prompt-template.md
+pipelines/repo-survey-prompt-template.md
+pipelines/repo-synthesizer-prompt-template.md
+pipelines/repo-team-protocol.md
+pipelines/scout-prompt-template.md
+pipelines/specialist-prompt-template.md
+pipelines/structured-driver.md
+pipelines/structured-scout-prompt-template.md
+pipelines/structured-synthesizer-prompt-template.md
+pipelines/structured-team-protocol.md
+pipelines/structured-verifier-prompt-template.md
+pipelines/team-protocol.md
+pipelines/web-driver.md
+pipelines/web-research-internals.md
+
+# Skills
+skills/eval-output.md
+
+# NotebookLM (Pipeline D)
+notebooklm/CLAUDE.md
+notebooklm/.claude-plugin/plugin.json
+notebooklm/.mcp.json
+notebooklm/agents/research-scout.md
+notebooklm/agents/research-sweep.md
+notebooklm/agents/research-worker.md
+notebooklm/commands/research.md
+notebooklm/pipelines/team-protocol.md
+notebooklm/pipelines/scout-prompt-template.md
+notebooklm/pipelines/sweep-prompt-template.md
+notebooklm/pipelines/worker-prompt-template.md
+notebooklm/pipelines/notebooklm-best-practices.md
